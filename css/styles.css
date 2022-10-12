@@ -154,3 +154,23 @@ a{
         padding-left: 0;
     }
 }
+
+/*Icons*/
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.icon--primary {
+    fill: var(--color-primary); /*only applies to svg images*/
+}
+
+.icon-container {
+    background: #f3f9fa;
+    width: 64px; /*absolute value because icons are not changing for different views*/
+    height: 64px; /*width and height properties have no impact on inline elements*/
+    border-radius: 100%; /*round*/
+    display: inline-flex;
+    justify-content: center; /*primary axis = default horizontal axis*/
+    align-items: center; /*secondary axis = default vertical axis*/
+}
