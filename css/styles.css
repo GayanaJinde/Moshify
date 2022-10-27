@@ -171,8 +171,17 @@ a{
     height: 40px;
 }
 
+.icon--small {
+    width: 30px;
+    height: 30px;
+}
+
 .icon--primary {
     fill: var(--color-primary); /*only applies to svg images*/
+}
+
+.icon--white {
+    fill: #fff;
 }
 
 .icon-container {
@@ -183,6 +192,10 @@ a{
     display: inline-flex;
     justify-content: center; /*primary axis = default horizontal axis*/
     align-items: center; /*secondary axis = default vertical axis*/
+}
+
+.icon-container--accent {
+    background: var(--color-accent);
 }
 /*no need for media queries since it remains same in all views*/
 
@@ -437,5 +450,52 @@ a{
 
     .quote__organization {
         font-size: 1.6rem;
+    }
+}
+
+/*Grids*/
+.grid {
+    display: grid;
+}
+
+@media screen and (min-width: 768px) {
+    .grid--cols-2 {
+        grid-template-columns: repeat(2, 1fr); /*all the available space divided by 2 and each col gets a slice*/
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .grid--cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*Testimonials*/
+.testimonial {
+    padding: 3rem;
+}
+
+.testimonial__image {
+    position: relative;
+}
+
+.testimonial__image > img {
+    width: 100%;
+}
+
+.testimonial__image > .icon-container {
+    position: absolute;
+    top: 3rem;
+    right: -32px;
+}
+
+@media screen and (min-width: 768px) {
+    .testimonial .quote,
+    .testimonial .quote__author {
+        font-size: 2.4rem;
+    }
+
+    .testimonial .quote {
+        margin-left: 6rem;
     }
 }
