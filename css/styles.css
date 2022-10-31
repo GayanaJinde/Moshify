@@ -544,3 +544,36 @@ a{
         margin: 0 2rem;
     }
 }
+
+/*Collapsibles*/
+.collapsible__header {
+    display: flex;
+    justify-content: space-between; /*pushes content to the edges of the container*/
+}
+
+.collapsible__heading {
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.collapsible__chevron {
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+.collapsible__content {
+    /*display: none;  bcoz we had to apply some animation properties*/
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+    transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+    max-height: 100vh; /*actual height determined by the content*/
+    opacity: 1;
+}
