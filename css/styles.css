@@ -18,6 +18,12 @@
 }
 
 /*Topography*/
+
+::selection {
+    background: var(--color-primary);
+    color: #fff;
+}
+
 html{
     /*62.5% of 16px = 10px*/
     font-size: 62.5%;
@@ -47,6 +53,7 @@ h2{
 
 h3{
     font-size: 3rem; 
+    font-weight: 500;
 }
 
 p{
@@ -142,7 +149,6 @@ a{
 .list {
     list-style: none;
     padding-left: 0;
-    color: var(--color-headings);
 }
 
 .list--inline .list__item {
@@ -153,6 +159,7 @@ a{
 .list--tick {
    list-style-image: url(../images/tick.svg); 
    padding-left: 3rem;
+   color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -423,6 +430,7 @@ a{
 /*Media*/
 .media {
     display: flex;
+    margin-bottom: 4rem;
 }
 
 .media__title {
@@ -625,17 +633,19 @@ a{
     color: #7b858b;
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
     color: #fff;
 }
 
 .block--skewed-right {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%); /*(x,y)offsets*/
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%); /*(x,y)offsets*/
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
 .block--skewed-left {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%); /*(x,y)TopLeft, TopRight, BottomRight, BottomLeft*/
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%); /*(x,y)TopLeft, TopRight, BottomRight, BottomLeft*/
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
@@ -708,9 +718,6 @@ a{
 }
 
 /*Hero*/
-.hero {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
 .hero__tagline {
     font-size: 2rem;
     color: #b9c3cf;
@@ -790,5 +797,26 @@ a{
         order: 2; /*changing order of the content in alternative rows
                     by default content order takes 1 and then changes it to 2 
                     in next or alternative row*/
+    }
+}
+
+/*Showcase Block*/
+.block-showcase__image > img {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .block-showcase .grid {
+        grid-template-columns: 50% 50%; /*50% of the width of the container*/
+    }
+    
+    .block-showcase__image {
+        justify-self: end;
+    }
+
+    .block-showcase__image > img {
+        width: auto; /*img will be displayed in its actual size*/
+        max-width: 700px;
     }
 }
