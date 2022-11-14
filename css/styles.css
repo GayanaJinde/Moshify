@@ -1,5 +1,8 @@
 /*root maps to html element, so all this constitutes as global variables*/
 /*color palette*/
+
+@import './normalize.css';
+
 :root{
     --color-primary: #2584ff;
     --color-secondary: #00d9ff;
